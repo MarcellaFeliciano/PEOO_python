@@ -1,0 +1,74 @@
+                     TRATAMENTO DE ERRO
+------------------------------------------------------------------
+try:
+# bloco de código
+except:
+# bloco que lida com a exceção
+else:
+# bloco se tudo estiver OK
+finnaly:
+# bloco independente se houve ou não exceção
+
+------------------------------------------------------------------
+ALGUNS TIPOS DE CLASSES DE ERROS/EXCEÇÕES DO PYTHON
+ValueError
+ZeroDivisionError
+NameError
+TypeError
+IndexError
+KeyError
+EOFError
+KeyboardInterrupt
+OSError
+MemoryError
+ConnnectionError
+RuntimeError
+
+------------------------------------------------------------------
+criando’/levantando exceções CUSTOMIZADAS ➡ ‘raise
+
+ if condição:
+   raise Exceção('Descrição da Exceção Levantada')
+
+------------------------------------------------------------------
+ASSERT’ :: TESTE LÓGICO (BOOLEANO) PARA DEPURAÇÃO
+
+ - é menos flexcivel e configuravel, ou seja não é muito interesssante para tratar erros!!!
+
+Permite a criação de testes no código para verificar se uma determinada condição é verdadeira (sem utilizar ‘if’ para isso)
+assert expressão, mensagem_de_erro
+
+Se ‘expressão’ for avaliada como falsa, o assert irá lançar uma exceção ‘AssertionError’
+OBS: a ‘mensagem_de_erro’ é opcional!!!
+
+
+-------------------------------------------------------------------
+warnings (alertas) :: biblioteca ‘warnings’
+
+-> Warning é uma exceção que não para o codigo se não for tratado / bom para usar na fase de teste de programas
+
+import warnings
+
+warnings.simplefilter('filtro', UserWarning)
+
+print('Antes do Alerta')
+warnings.warn('Mensagem de Alerta')
+print('Depois do Alerta')
+
+-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=
+default: Alerta e continua
+error: Comportamento de Erro
+ignore: Ignora alerta
+-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=
+
+warnings.simplefilter('default', UserWarning) # Desnecessário
+warnings.simplefilter('error', UserWarning)
+warnings.simplefilter('ignore', UserWarning)
+
+
+
+------------------------------
+tratamento de senhas
+
+
+HASH - criptografa - algoritmo de hash - 
