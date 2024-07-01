@@ -1,0 +1,6 @@
+arq = open("marcella.txt", 'w')
+arq.write('opa\n')
+arq2 = open('marcella.txt', 'a')
+arq2.write('opaaa\n')
+arq.close()
+arq.close()
