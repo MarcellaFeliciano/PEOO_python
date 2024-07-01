@@ -1,0 +1,110 @@
+------------------------------------------------------------------------------
+Interface Grafica
+
+Widget = componetes da interface grafica (botao, menu)
+
+Evento = precionamento de tecla pu clique de mouse sobre a GUI
+
+Evento Handler  
+
+TKinter - class
+from tkinter import *
+
+- A Classe TK fornece todos os widget para mona a GUI usando TKinter
+
+raiz (root) = TK()
+
+------------------------
+from tkinter import *
+class Janela:   
+   def __init__(self, instancia_tk):    
+     pass
+ 
+ raiz = TK()
+ Janela(raiz)
+ raiz.mainloop() 
+ 
+ - > deixa a janela em loop para que a janel anão fecha
+ 
+ -------------------------
+ Containers - São como os "Espaços organizaveis" dentro da janela principal
+  (Pode haver estrutura hierarquica nos containers)
+  container comum é o FRAME !
+  ------------------------
+  
+  Posicionamento dos widgets (tkinter = grid,pack e place)
+  
+  - gerenciador de geometria --> o PACK (preferencialmente)
+------------------------------------
+from tkinter import *
+class Janela:
+    def __init__(self, inicio):
+        self.frame1 = Frame(inicio)
+        self.frame1.pack()
+        self.botao1 = Button(self.frame1, text='oi!', bg='yellow')
+        self.botao1.pack()     
+
+# - para ficar bonito -
+# self.botao1 = Button(self.frame1) 
+# self.butao1[text] = 'oiii!'
+# self.butao1[bg] = 'yellowraiz = Tk()Janela(raiz)raiz.mainloop()
+-------------------------------------
+
+label = rotulo em uma linha unica de cada widget
+text = estrutura com mutiplas linhas 
+entry = caixa de texto para receber valores do usuario (pedir para o usuario digitar varias linhas)
+handler = 
+
+
+
+
+
+---------------------------------------
+
+  Command binding
+
+- Mouse clicks
+- Key presses
+
+ To use the command binding, you follow these steps:
+  ~ First, define a function as a callback.
+  ~ Then, assign the name of the function to the command option of the widget.
+
+------ ------ -------- ------- -------
+
+import tkinter as tk
+from tkinter import ttk
+
+root = tk.Tk()
+
+def button_clicked():
+    print('Button clicked')
+
+button = ttk.Button(root, text='Click Me', command=button_clicked)
+button.pack()
+
+root.mainloop()
+
+------ ------ -------- ------- -------
+
+import tkinter as tk
+from tkinter import ttk
+
+root = tk.Tk()
+
+def select(option):
+    print(option)
+
+ttk.Button(root, text='Rock', command=lambda: select('Rock')).pack()
+ttk.Button(root, text='Paper',command=lambda: select('Paper')).pack()
+ttk.Button(root, text='Scissors', command=lambda: select('Scissors')).pack()
+
+root.mainloop()
+
+ - lambda: In Python, lambda is used to create anonymous (unnamed) functions. These are small,
+  throwaway functions that can have any number of arguments, but only one expression. The expression is evaluated when the lambda function is called.
+
+ - callback: This is a placeholder name for a function that you want to execute when the associated widget (often a button) is interact
+
+
+------ ------ -------- ------- -------
